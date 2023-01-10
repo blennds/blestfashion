@@ -1,0 +1,848 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+
+}
+
+::selection{
+    color: rgba(16, 163, 134, 0.681);
+}
+
+:root{
+    font-size:20px;
+}
+
+::-webkit-scrollbar{
+    background-color: transparent;
+    width: 10px;
+}
+
+
+::-webkit-scrollbar-thumb{
+    background-color: #333;
+    border-radius: 1px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+header{
+    position:fixed;
+    z-index: 999;
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    background-color:   #fff;
+    box-shadow: 0 0 30px 0 gray;
+    line-height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  
+}
+
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 30px;
+}
+
+nav ul li{
+    list-style: none;
+    margin: 0 5px;
+    text-transform: uppercase;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-weight: 550;
+    font-size: 18px;
+    padding: 8px 13px;
+}
+
+a.active , a:hover{
+    background-color: #333;
+    color: #fff;
+    border-radius:5px ;
+}
+
+
+.logo img{
+    position: absolute;
+    top: -65px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 200px;
+    
+}
+.shopping-bag{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-right:20px ;
+    margin-top: 10px;
+
+}
+
+.shopping-bag .shopping-bag-number{/*numri mbi iconen e shopping bagit*/
+    position: absolute;
+width: 25px;
+height: 18px;
+background-color: rgb(255, 0, 0);
+border-radius:30% ;
+font-size: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #fff;
+margin-left: 4px;
+left: 20px;
+}
+
+#burger-menu{
+    display: none;
+}
+
+
+
+/*pjesa kur e klikoj figuren e shopping cart na shfaqet nje pjese tjeter*/
+.cart{
+    display: none;
+}
+
+#added{
+    display: contents;
+}
+
+
+#added:checked + .cart {
+    width: 45%;
+    height: 90%;
+    background-color: rgba(233, 233, 233, 0.905);
+   top:71px;
+    margin-right: -20px;
+    transition: right 2s;
+    position: fixed;
+font-size: 12px;    
+overflow-y: scroll;
+display: flex;
+flex-direction: column;
+align-items: space-between;
+backdrop-filter: blur(5px);
+box-sizing: border-box;
+box-shadow: 10px 10px 10px 15px rgb(177, 175, 175);
+text-align: center;
+}
+
+.subtotal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color:rgb(244, 81, 6) ;
+
+}
+
+.subtotal h3{
+    font-size: 0.7rem;
+    width: 100%;
+    color: #fff;
+    width: 140px;
+    
+}
+
+.cartImg{/*dizajnimi i produkteve qysh me u shfaq ne shopping cart*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #888;
+    margin: 10px;
+}
+.cartImg > img{
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+ }
+
+ .cartImg > h3{/*pjesa ku e dizajnoj emrin e kompanis brenda shopping cart*/
+  color: #333;
+  font-size: 18px;
+position: relative;
+text-align: center;
+width: 140px;
+
+
+}
+ 
+ .cartImg > h1{/*pjesa ku e dizajnoj qmimib brenda shopping cart*/
+    color: red;
+    font-size: 18px;
+    position: relative;
+    text-align: left;
+    width: 80px;
+    }
+
+
+button{/*butoni brenda shopping-cart*/
+      width: 120px;
+ height: 40px;
+ background-color: rgb(244, 81, 6);
+ text-transform: uppercase;
+ color: #fff;
+ margin-top: -5px;
+ outline: none;
+ border: none;
+ font-size: 0.8rem;
+}
+
+/*-----------------------------PRODDUCTS*----------------------------------*/
+
+.square{
+    position: relative;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    animation: topToBottom 3s forwards ;
+}
+
+@keyframes topToBottom {
+    from {
+        transform: translateY(-500px);
+        opacity: 0;
+    }to{
+        transition: none;
+    }
+}
+
+.heading {
+    position: relative;
+    text-align: center;
+    top:100px;
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.heading h1{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: 2.6rem;
+}
+
+.heading span{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(244, 81, 6);
+    font-size: 2.6rem;
+    font-weight: 600;
+}
+
+.heading hr{
+    position: relative;
+    border-radius:3px ;
+    background-color: rgb(244, 81, 6);
+    height: 5px;
+    border: none;
+    width: 6%;
+    margin-top: 10px;
+}
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin-top: 180px;
+    }
+
+
+.box{
+    position: relative;
+    height: 500px;
+    width: 280px;
+    margin:10px;
+}
+.products{
+    position: relative;
+    height: 250px;
+    width: 250px;
+    margin: 0 auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(238, 232, 232);
+}
+
+.products:hover{
+    background-color: rgba(245,178,178,0.7);
+    }
+
+
+
+
+
+.box span{
+    color: rgb(230, 230, 14);
+    font-size: 1.5rem;
+    position: relative;
+    width: 100%;
+
+}
+
+.box h3{
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.box h1{
+    font-size: 1rem;
+    color: rgb(237, 12, 12);
+}
+
+.box button{
+    width: 120px;
+    height: 50px;
+    background-color: rgb(244, 81, 6);
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    display: none;
+    font-size: 0.8rem;
+}
+
+button:hover{
+    border: 1px solid rgb(244, 81, 6);
+    color: rgb(244, 81, 6);
+    background-color: transparent;
+}
+
+.box:hover > button{
+    position: relative;
+    display: block;
+    text-align: center;
+    transition: .5s;
+    left: 30%;
+}
+.box button:active::before{
+    content: 'ADDED🛒';
+    position: absolute;
+    color: #000;
+    transition: none;
+    width: 120px;
+    height: 48px;
+    background-color: #fff;
+    text-transform: uppercase;
+    margin: -16px 0 0 -2px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid #333;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.nextPages{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 40px;
+}
+.nextPages a {
+    margin-bottom: 50px;
+    text-decoration: none;
+    color: #333;
+}
+.nextPages a:hover{
+    background-color: transparent;
+}
+
+.nextPages span {
+    cursor: pointer;
+    border: 1px solid rgb(200, 185, 185);
+    padding: 5px 10px;
+    margin: 0 5px;
+    color:rgb(93, 92, 92);
+    outline: none;
+}
+
+
+.nextPages span.active ,.nextPages span:hover{
+    background-color:   rgb(25, 166, 182);;
+    color: #fff;
+    border: none;
+}
+
+
+footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #0d0d0d;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+footer .footer-logo{
+    position: relative;
+    width: 300px;
+    margin: 100px 20px;
+    
+}
+
+.footer-logo img{
+    width: 150px;
+    height: 150px;
+}
+
+.footer-logo p {
+    color: rgb(131, 128, 128);
+    font-size: 0.7rem;
+    margin-top: 20px;
+}
+
+
+.footer-featured{
+    position: relative;
+    width: 300px;  
+    text-transform: uppercase; 
+    margin: 100px 0;
+
+}
+
+.footer-featured h1{
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.footer-featured h3{
+    color: rgb(131, 128, 128);
+    margin-top: 5px;
+
+}
+
+
+
+
+.footer-contact{
+    position: relative;
+    width: 300px;  
+    text-transform: uppercase; 
+    margin: 100px 0px;
+
+}
+
+.footer-contact h1{
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.footer-contact h3{
+    color: rgb(131, 128, 128);
+    margin-top: 20px;
+
+}
+
+.footer-contact .social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.footer-contact .social-media li {
+    font-size: 2rem;
+    position: relative;
+    list-style: none;
+}
+
+.footer-contact .social-media li a{
+    background-color: #000 ;
+    padding: 7px 10px;
+    border-radius: 50%;
+}
+
+.footer-contact .social-media li a:hover{
+    background-color: #545656;
+   
+}
+
+.footer-contact .social-media li a:active{
+background-color:  rgb(244, 81, 6);
+}
+
+.footer-copyrights{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: #000;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    font-style: italic;
+    color: rgb(220, 208, 208);
+    letter-spacing: 1px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*RESPONSIVE DESIGN*/
+@media only screen and (max-width:1024px) {
+  
+#added:checked + .cart {
+    width: 56%;
+    height: 90%;
+    background-color: rgba(233, 233, 233, 0.905);
+   top:71px;
+    margin-right: -20px;
+    transition: right 2s;
+    position: fixed;
+font-size: 12px;    
+overflow-y: scroll;
+display: flex;
+flex-direction: column;
+align-items: space-between;
+backdrop-filter: blur(5px);
+box-sizing: border-box;
+box-shadow: 10px 10px 10px 15px rgb(177, 175, 175);
+text-align: center;
+}
+    nav{
+        background-color: #fff;
+        position: fixed;
+        width: 100%;
+       height: 70px;
+       display: flex;
+        align-items: center;    
+        justify-content:flex-end;
+        box-shadow: 0 0 30px 0 gray;
+    }
+    nav ul {
+        display:none;
+     position: absolute;
+     right: 0;
+     left: 0;
+     text-align: center;
+     padding: 16px 0;
+     
+    }
+    .logo img{
+        position: absolute;
+        top: -60px;
+        width: 150px;
+        height: 200px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    
+    
+    
+    label{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .span{
+        width: 40px;
+        height: 5px;
+        background-color:#333;
+        position: relative;
+        margin-top: 7px;
+        margin-right: 20px;
+    }
+    
+    
+    
+    #burger-menu:checked + ul{
+     width: 100%;
+     height: 300px;
+     background-color: whitesmoke;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     align-items: flex-start;
+    top:70px;
+     margin-left: 0px;
+     transition:  .5s;
+     position: fixed;
+    }
+    
+    .shopping-bag{
+        margin-top: 0;
+    }
+
+    }
+    
+    @media only screen and (max-width:768px) {
+        #added:checked + .cart {
+            width: 100%;
+            height: 90%;
+            background-color: rgba(233, 233, 233, 0.905);
+           top:71px;
+            margin-right: -20px;
+            transition: right 2s;
+            position: fixed;
+        font-size: 12px;    
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        align-items: space-between;
+        backdrop-filter: blur(5px);
+        box-sizing: border-box;
+        box-shadow: 10px 10px 10px 15px rgb(177, 175, 175);
+        text-align: center;
+        }
+           
+    nav{
+        background-color: #fff;
+        position: fixed;
+        width: 100%;
+       height: 70px;
+       display: flex;
+        align-items: center;    
+        justify-content:flex-end;
+        box-shadow: 0 0 30px 0 gray;
+    }
+    nav ul {
+        display:none;
+     position: absolute;
+     right: 0;
+     left: 0;
+     text-align: center;
+     padding: 16px 0;
+     
+    }
+    .logo img{
+        position: absolute;
+        top: -60px;
+        width: 150px;
+        height: 200px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    
+    
+    
+    label{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .span{
+        width: 35px;
+        height: 4px;
+        background-color:#333;
+        position: relative;
+        margin-top: 6px;
+        margin-right: 20px;
+    }
+
+
+    
+    
+    #burger-menu:checked + ul{
+     width: 100%;
+     height: 300px;
+     background-color: whitesmoke;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     align-items: flex-start;
+    top:70px;
+     margin-left: 0px;
+     transition:  .5s;
+     position: fixed;
+    }
+    
+    
+    .box button{
+        display: block;
+        margin-left: 29%;
+        text-align: center;
+    }
+    
+    .box:hover  button{
+        margin-left:-1%;
+        transition: none;
+    }  
+
+        
+
+    }
+        @media only screen and (max-width:480px) {
+         
+#added:checked + .cart {
+    width: 100%;
+    height: 90%;
+    background-color: rgba(233, 233, 233, 0.905);
+   top:71px;
+    margin-left: 20px;
+    position: fixed;
+font-size: 12px;    
+overflow-y: scroll;
+display: flex;
+flex-direction: column;
+align-items: space-between;
+backdrop-filter: blur(5px);
+box-sizing: border-box;
+box-shadow: 10px 10px 10px 15px rgb(177, 175, 175);
+text-align: center;
+}
+
+.cartImg > img{
+width: 70px;
+height: 70px;
+}
+
+.cartImg > h3{/*pjesa ku e dizajnoj emrin e kompanis brenda shopping cart*/
+font-size: 15px;
+text-align: center;
+width: 130px;
+margin-left: -30px ;
+
+
+}
+
+.cartImg > h1{/*pjesa ku e dizajnoj qmimib brenda shopping cart*/
+font-size: 15px;
+text-align: left;
+  width: 50px;
+  margin-left:-15px;
+}
+
+button{/*butoni brenda shopping-cart*/
+width: 60px;
+height:30px;
+background-color: rgb(244, 81, 6);
+text-transform: uppercase;
+color: #fff;
+margin-top: -5px;
+outline: none;
+border: none;
+font-size: 0.5rem;
+}
+
+               
+    nav{
+        background-color: #fff;
+        position: fixed;
+        width: 100%;
+       height: 70px;
+       display: flex;
+        align-items: center;    
+        justify-content:flex-end;
+        box-shadow: 0 0 30px 0 gray;
+    }
+    nav ul {
+        display:none;
+     position: absolute;
+     right: 0;
+     left: 0;
+     text-align: center;
+     padding: 16px 0;
+     
+    }
+    .logo img{
+        position: absolute;
+        top: -60px;
+        width: 150px;
+        height: 200px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    
+    
+    
+    label{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .span{
+        width: 30px;
+        height:3px;
+        background-color:#333;
+        position: relative;
+        margin-top: 5px;
+        margin-right: 20px;
+    }
+
+
+    
+    
+    #burger-menu:checked + ul{
+     width: 100%;
+     height: 300px;
+     background-color: whitesmoke;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     align-items: flex-start;
+    top:70px;
+     margin-left: 0px;
+     transition:  .5s;
+     position: fixed;
+    }
+    
+
+    
+    .box button{
+        display: block;
+        margin-left: 29%;
+        text-align: center;
+    }
+    
+    .box:hover  button{
+        margin-left:-1%;
+        transition: none;
+    }
+
+
+    .background-image img{
+        height: auto;
+        width: auto;
+      margin-left: -50px;
+    }
+
+  
+ }
